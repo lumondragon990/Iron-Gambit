@@ -12,12 +12,13 @@ Static site — no build step, no dependencies to install, no framework. Three H
 
 | File | What it is |
 |---|---|
-| `index.html` | The storefront. Hero, creed, Royal Series grid, lookbook, Houston, drop-list capture. |
-| `agents3d.html` | **Command** — a 3D city where the seven AI agents work. Enterable buildings. Needs a GPU. |
-| `agents.html` | The 2D isometric version of Command. Lighter; good fallback for older phones. |
-| `docs/BRAND.md` | Brand core. Upload this to every agent Project. |
+| `index.html` | The whole site. Hero, creed, Royal Series grid, lookbook, Houston, drop-list capture. |
+| `assets/` | Logo in gold, cream and dark, plus the favicon. |
+| `docs/BRAND.md` | Brand core. Also lives in the agents repo. |
 | `docs/LAUNCH-PLAN.md` | 90-day launch plan. |
-| `docs/AI-AGENTS.md` | The seven agent prompts. |
+| `docs/AI-AGENTS.md` | The agent prompts, for reference. |
+
+The AI agents run in a **separate repo on Railway** (`iron-gambit-agents`) and are not part of this site.
 
 ---
 
@@ -28,7 +29,7 @@ Static site — no build step, no dependencies to install, no framework. Three H
 3. Framework preset: **Other**. Leave build command and output directory empty.
 4. **Deploy.**
 
-That's it. `vercel.json` turns on clean URLs, so Command lives at `/agents3d` (no `.html`).
+That's it. `vercel.json` turns on clean URLs and adds a couple of security headers.
 
 **Custom domain:** Project → Settings → Domains → add `irongambit.com`, then point your registrar's nameservers or add the A/CNAME records Vercel shows you.
 
@@ -53,21 +54,11 @@ var TARGET = new Date('2026-09-12T19:00:00-05:00').getTime();
 
 **2. Wire up the email form.** In `index.html`, find `/* TODO: POST to your email provider */`. Right now the form validates the address and shows a confirmation but stores nothing. Drop your Klaviyo or Shopify endpoint there.
 
-**3. Swap in the real logo.** Both pages pull from one inline `<symbol id="crest">` block. Replace it once per file and every instance updates. Export your logo as SVG with the fill set to `#D8B678`.
+**3. Logo.** Already done — the real mark is vector-traced into one inline `<symbol id="crest">` block and filled with `currentColor`, so it goes gold on dark and dark on cream automatically. If you ever get a cleaner vector from a designer, replace the single `<path d="...">` inside that symbol and all nine instances update.
 
 **4. Add product photos.** The Royal Series cards use colored panels with the crest as placeholders. Replace the `.shot` divs with `<img>` tags.
 
 **5. Replace the lookbook tiles.** Six square slots under "Shot in the Iron House."
-
----
-
-## Notes on Command
-
-`agents3d.html` loads three.js from `cdnjs.cloudflare.com`. It needs an internet connection and a WebGL-capable browser. If the engine fails to load, the page shows a message instead of failing silently.
-
-The agents are a **simulation** — scripted movement and task logs, not seven live Claude instances. It's a dashboard for the real system, which runs in Claude Projects using the prompts in `docs/AI-AGENTS.md`. Making it genuinely live means a backend on Railway writing real events to a database, with this page reading from it.
-
-Controls: drag to orbit, right-drag or shift-drag to pan, scroll to zoom, click a building to go inside.
 
 ---
 
