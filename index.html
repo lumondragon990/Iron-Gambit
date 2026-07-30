@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iron Gambit — Strategy is a muscle.</title>
+<meta name="description" content="Luxury training apparel from Houston, TX. The Royal Series. Limited runs, no restock.">
+<meta property="og:title" content="Iron Gambit — The Royal Series">
+<meta property="og:description" content="Strategy is a muscle. Luxury training apparel out of Houston, TX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#0A0908;
+  --marble:#14100E;
+  --marble-2:#1D1815;
+  --burgundy:#5E1D25;
+  --burgundy-lt:#7A2731;
+  --sandstone:#B9A488;
+  --cream:#F2EBDD;
+  --gold:#D8B678;
+  --gold-hi:#F0DAA8;
+  --gold-dp:#9C7C43;
+  --smoke:#8B8078;
+
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+
+  --gut:clamp(20px,5vw,80px);
+  --maxw:1300px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--obsidian);color:var(--cream);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+
+.band{padding:clamp(68px,10vw,140px) 0;position:relative}
+.band--dark{background:var(--obsidian)}
+.band--marble{background:var(--marble);
+  background-image:radial-gradient(ellipse at 20% 10%,rgba(216,182,120,.05),transparent 55%),radial-gradient(ellipse at 85% 80%,rgba(94,29,37,.16),transparent 55%)}
+.band--cream{background:var(--cream);color:var(--marble)}
+.band--burgundy{background:var(--burgundy);
+  background-image:radial-gradient(ellipse at 70% 20%,rgba(216,182,120,.13),transparent 60%)}
+
+/* gold hairline */
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dp),transparent);opacity:.55}
+
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacing:.01em}
+h1{font-size:clamp(48px,8.4vw,116px);text-transform:uppercase;letter-spacing:.02em}
+h2{font-size:clamp(34px,5.4vw,68px);text-transform:uppercase;letter-spacing:.03em}
+h3{font-size:clamp(19px,2vw,24px);text-transform:uppercase;letter-spacing:.09em}
+p{max-width:58ch}
+
+.eyebrow{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;display:block}
+.band--cream .eyebrow{color:var(--gold-dp)}
+.lede{font-size:clamp(15px,1.25vw,17.5px);color:var(--smoke);font-weight:300}
+.band--cream .lede{color:#6B6158}
+.band--burgundy .lede{color:rgba(242,235,221,.78)}
+
+/* logo mark */
+.logo{display:flex;align-items:center;gap:11px}
+.logo svg{width:34px;height:34px;flex:none}
+.logo-txt{font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:80;background:rgba(10,9,8,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(216,182,120,.16)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-links{display:flex;gap:34px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--smoke);font-weight:400}
+.nav-links a{transition:color .25s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{font-size:10px;letter-spacing:.22em;text-transform:uppercase;border:1px solid var(--gold-dp);color:var(--gold);padding:11px 20px;transition:all .3s}
+.nav-cta:hover{background:var(--gold);color:var(--obsidian)}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* hero */
+.hero{padding:clamp(52px,8vw,110px) 0 clamp(60px,8vw,120px);text-align:center}
+.hero-crest{display:flex;justify-content:center;margin-bottom:34px}
+.hero-crest svg{width:clamp(92px,13vw,140px);height:auto;opacity:0;animation:crest 1.3s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes crest{from{opacity:0;transform:translateY(16px) scale(.94)}to{opacity:1;transform:none}}
+.hero h1{margin:0 auto}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln span{display:block;transform:translateY(102%);animation:rise 1.05s cubic-bezier(.16,1,.3,1) .25s forwards}
+.hero h1 .ln:nth-child(2) span{animation-delay:.36s}
+@keyframes rise{to{transform:translateY(0)}}
+.hero .gold{color:var(--gold);font-style:italic;text-transform:none;letter-spacing:0}
+.hero-sub{margin:30px auto 0;max-width:46ch;opacity:0;animation:fade 1s ease .75s forwards}
+.hero-btns{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fade 1s ease .9s forwards}
+@keyframes fade{to{opacity:1}}
+
+.btn{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:400;padding:16px 32px;border:1px solid transparent;cursor:pointer;transition:all .3s;display:inline-block}
+.btn--gold{background:var(--gold);color:var(--obsidian);border-color:var(--gold)}
+.btn--gold:hover{background:var(--gold-hi);border-color:var(--gold-hi)}
+.btn--line{border-color:rgba(216,182,120,.4);color:var(--gold)}
+.btn--line:hover{border-color:var(--gold);background:rgba(216,182,120,.09)}
+.band--cream .btn--line{border-color:rgba(0,0,0,.28);color:var(--marble)}
+.band--cream .btn--line:hover{border-color:var(--marble);background:rgba(0,0,0,.05)}
+
+/* marquee */
+.tick{border-top:1px solid rgba(216,182,120,.18);border-bottom:1px solid rgba(216,182,120,.18);padding:16px 0;overflow:hidden;background:var(--marble)}
+.tick-in{display:flex;gap:60px;white-space:nowrap;animation:slide 34s linear infinite;font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-dp)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* creed */
+.creed{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,64px);margin-top:64px}
+@media(max-width:880px){.creed{grid-template-columns:1fr;gap:42px}}
+.creed-i{padding-top:26px;border-top:1px solid rgba(0,0,0,.2)}
+.creed-i h3{margin-bottom:14px;font-size:20px}
+.creed-i p{font-size:14.5px;color:#6B6158;max-width:none}
+.creed-n{font-family:var(--serif);font-size:13px;letter-spacing:.3em;color:var(--gold-dp);display:block;margin-bottom:18px}
+
+/* countdown */
+.clock{display:flex;gap:clamp(20px,4vw,54px);flex-wrap:wrap;justify-content:center}
+.clock-u{text-align:center}
+.clock-n{font-family:var(--serif);font-weight:500;font-size:clamp(46px,7.5vw,94px);line-height:.9;color:var(--gold);font-variant-numeric:tabular-nums;display:block}
+.clock-l{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--smoke);margin-top:12px;display:block}
+
+/* products */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(216,182,120,.16);border:1px solid rgba(216,182,120,.16);margin-top:56px}
+@media(max-width:940px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--obsidian);transition:background .35s}
+.card:hover{background:var(--marble-2)}
+.shot{aspect-ratio:4/5;display:grid;place-items:center;position:relative;overflow:hidden}
+.shot--burg{background:linear-gradient(155deg,#5E1D25,#3A1218)}
+.shot--sand{background:linear-gradient(155deg,#B9A488,#8D7A60)}
+.shot--obs{background:linear-gradient(155deg,#1D1815,#0A0908)}
+.shot--cream{background:linear-gradient(155deg,#F2EBDD,#CFC4AF)}
+.shot svg{width:34%;height:auto;opacity:.34;transition:all .45s}
+.card:hover .shot svg{opacity:.62;transform:scale(1.05)}
+.sku{position:absolute;top:16px;left:16px;font-size:9px;letter-spacing:.26em;color:rgba(255,255,255,.5)}
+.shot--sand .sku,.shot--cream .sku{color:rgba(0,0,0,.42)}
+.made{position:absolute;top:16px;right:16px;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(216,182,120,.5);color:var(--gold-hi);padding:4px 9px}
+.shot--sand .made,.shot--cream .made{border-color:rgba(0,0,0,.3);color:rgba(0,0,0,.62)}
+.card-body{padding:22px 20px 24px;border-top:1px solid rgba(216,182,120,.13)}
+.card-name{font-family:var(--serif);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:.06em;line-height:1.1}
+.card-col{font-size:11px;letter-spacing:.13em;color:var(--smoke);margin-top:7px}
+.card-meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;font-size:11px;letter-spacing:.1em;color:var(--smoke)}
+.card-price{font-family:var(--serif);font-size:20px;color:var(--gold);letter-spacing:0}
+.notify{width:100%;margin-top:18px;background:none;border:1px solid rgba(216,182,120,.28);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;padding:12px;cursor:pointer;color:var(--gold);transition:all .3s}
+.notify:hover{background:var(--gold);color:var(--obsidian);border-color:var(--gold)}
+
+/* agents teaser */
+.teaser{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+@media(max-width:880px){.teaser{grid-template-columns:1fr}}
+.teaser-box{border:1px solid rgba(216,182,120,.24);padding:clamp(22px,3vw,38px);background:rgba(10,9,8,.5)}
+.agent-row{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid rgba(216,182,120,.1);font-size:12.5px;letter-spacing:.05em}
+.agent-row:last-child{border-bottom:none}
+.agent-pc{font-size:19px;color:var(--gold);width:22px;text-align:center;flex:none}
+.agent-nm{flex:1}
+.agent-st{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+.dot{width:5px;height:5px;border-radius:50%;background:#5FA85F;display:inline-block;margin-right:7px;animation:blink 2.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.28}}
+
+/* feed */
+.feed{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;margin-top:48px;background:rgba(0,0,0,.14)}
+@media(max-width:900px){.feed{grid-template-columns:repeat(3,1fr)}}
+.tile{aspect-ratio:1;background:#E4DBCA;display:grid;place-items:center;transition:background .3s}
+.tile:hover{background:var(--marble)}
+.tile span{font-family:var(--serif);font-size:13px;letter-spacing:.24em;color:#9C9186;transition:color .3s}
+.tile:hover span{color:var(--gold)}
+
+/* houston */
+.spots{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(216,182,120,.16);border:1px solid rgba(216,182,120,.16);margin-top:52px}
+@media(max-width:880px){.spots{grid-template-columns:1fr}}
+.spot{background:var(--marble);padding:32px 28px 34px}
+.spot-when{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.spot h3{margin-bottom:12px;font-size:21px}
+.spot p{font-size:13.5px;color:var(--smoke);max-width:none}
+
+/* signup */
+.form{display:flex;border:1px solid rgba(242,235,221,.34);margin-top:30px;max-width:480px;margin-left:auto;margin-right:auto}
+.form input{flex:1;background:none;border:none;padding:17px 20px;font-size:15px;min-width:0;font-weight:300}
+.form input::placeholder{color:rgba(242,235,221,.48)}
+.form input:focus{outline:none;background:rgba(0,0,0,.16)}
+.form button{background:var(--gold);color:var(--obsidian);border:none;cursor:pointer;font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:0 28px;transition:background .3s}
+.form button:hover{background:var(--gold-hi)}
+.fineprint{font-size:10px;letter-spacing:.16em;color:rgba(242,235,221,.62);margin-top:18px}
+.perks{list-style:none;margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;font-size:11.5px;letter-spacing:.07em;line-height:1.6}
+@media(max-width:800px){.perks{grid-template-columns:1fr 1fr;gap:20px}}
+.perks li{padding-top:16px;border-top:1px solid rgba(242,235,221,.26)}
+
+/* footer */
+.foot{border-top:1px solid rgba(216,182,120,.16);padding:56px 0 44px}
+.foot-in{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap;align-items:flex-start}
+.foot-links{display:flex;gap:28px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--smoke);flex-wrap:wrap}
+.foot-links a:hover{color:var(--gold)}
+.motto{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--gold);margin-top:38px}
+.foot-legal{font-size:9.5px;letter-spacing:.18em;color:#3E3833;margin-top:14px}
+
+.center{text-align:center}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .ln span{transform:none}
+  .hero-crest svg,.hero-sub,.hero-btns{opacity:1}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- reusable crest -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="crest" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="43" fill="none" stroke="currentColor" stroke-width="2.6"/>
+  <!-- barbell -->
+  <rect x="10" y="57.5" width="100" height="5" fill="currentColor"/>
+  <rect x="20" y="47" width="7" height="26" rx="1.4" fill="currentColor"/>
+  <rect x="29" y="50" width="6" height="20" rx="1.4" fill="currentColor"/>
+  <rect x="93" y="47" width="7" height="26" rx="1.4" fill="currentColor"/>
+  <rect x="85" y="50" width="6" height="20" rx="1.4" fill="currentColor"/>
+  <rect x="6" y="54" width="5" height="12" rx="1.2" fill="currentColor"/>
+  <rect x="109" y="54" width="5" height="12" rx="1.2" fill="currentColor"/>
+  <!-- king -->
+  <rect x="57.6" y="18" width="4.8" height="15" fill="currentColor"/>
+  <rect x="53" y="23" width="14" height="4.6" fill="currentColor"/>
+  <path d="M46 40 L49.5 32 L54 38 L60 30 L66 38 L70.5 32 L74 40 Z" fill="currentColor"/>
+  <rect x="45" y="40" width="30" height="6" rx="1" fill="currentColor"/>
+  <path d="M49 47 C49 62 45 72 43 84 L77 84 C75 72 71 62 71 47 Z" fill="currentColor"/>
+  <rect x="39" y="85" width="42" height="7" rx="1.6" fill="currentColor"/>
+  <rect x="35" y="93" width="50" height="8" rx="2" fill="currentColor"/>
+</symbol>
+</svg>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo"><svg style="color:var(--gold)"><use href="#crest"/></svg><span class="logo-txt">Iron Gambit</span></a>
+    <div class="nav-links">
+      <a href="#royal">The Royal Series</a>
+      <a href="#creed">The Creed</a>
+      <a href="#houston">Houston</a>
+      <a href="agents3d.html">Command</a>
+    </div>
+    <a href="#list" class="nav-cta">Join the list</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="band band--marble hero" id="top">
+  <div class="wrap">
+    <div class="hero-crest"><svg viewBox="0 0 120 120" style="color:var(--gold)"><use href="#crest"/></svg></div>
+    <span class="eyebrow">Houston, Texas · Est. 2026</span>
+    <h1>
+      <span class="ln"><span>Strategy is</span></span>
+      <span class="ln"><span>a <span class="gold">muscle</span>.</span></span>
+    </h1>
+    <p class="hero-sub lede">Luxury training apparel for people who think three moves out and lift like they mean it. The Royal Series drops in limited numbers. We don't restock.</p>
+    <div class="hero-btns">
+      <a href="#list" class="btn btn--gold">Join the list</a>
+      <a href="#royal" class="btn btn--line">View the Royal Series</a>
+    </div>
+  </div>
+</header>
+
+<div class="tick"><div class="tick-in">
+  <span>Give up the piece. Take the board.</span><span>·</span><span>The Royal Series</span><span>·</span><span>Burgundy Reserve</span><span>·</span><span>Sandstone Beige</span><span>·</span><span>No Restock</span><span>·</span><span>Houston TX</span><span>·</span>
+  <span>Give up the piece. Take the board.</span><span>·</span><span>The Royal Series</span><span>·</span><span>Burgundy Reserve</span><span>·</span><span>Sandstone Beige</span><span>·</span><span>No Restock</span><span>·</span><span>Houston TX</span><span>·</span>
+</div></div>
+
+<!-- CREED -->
+<section class="band band--cream" id="creed">
+  <div class="wrap">
+    <div class="rv center">
+      <span class="eyebrow">The Creed</span>
+      <h2>Iron builds<br>the body.<br>Chess builds<br>the plan.</h2>
+    </div>
+    <div class="creed rv">
+      <div class="creed-i">
+        <span class="creed-n">I.</span>
+        <h3>The gambit</h3>
+        <p>A gambit gives up material to take position. Every 5am alarm, every meal you prepped, every night you left early — that's the trade. You're not losing anything. You're paying early.</p>
+      </div>
+      <div class="creed-i">
+        <span class="creed-n">II.</span>
+        <h3>Play the long game</h3>
+        <p>Nobody wins a match on move four and nobody builds a body in a cycle. The people this is made for already know that. It's why they're still here in year three.</p>
+      </div>
+      <div class="creed-i">
+        <span class="creed-n">III.</span>
+        <h3>Built to a standard</h3>
+        <p>380gsm brushed-back fleece. Gold foil, not plastisol. YKK hardware. Cut and finished so it still holds shape after ninety washes — because it's going to get ninety washes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROYAL SERIES -->
+<section class="band band--dark" id="royal">
+  <div class="wrap">
+    <div class="rv center">
+      <span class="eyebrow">Drop 01</span>
+      <h2>The Royal Series</h2>
+      <p class="lede center" style="margin:22px auto 46px;max-width:48ch">Two colorways. Six pieces. Numbered runs. The list gets 24 hours before public release.</p>
+      <div class="clock">
+        <div class="clock-u"><span class="clock-n" id="d">00</span><span class="clock-l">Days</span></div>
+        <div class="clock-u"><span class="clock-n" id="h">00</span><span class="clock-l">Hours</span></div>
+        <div class="clock-u"><span class="clock-n" id="m">00</span><span class="clock-l">Minutes</span></div>
+        <div class="clock-u"><span class="clock-n" id="s">00</span><span class="clock-l">Seconds</span></div>
+      </div>
+    </div>
+
+    <div class="grid3 rv">
+      <article class="card"><div class="shot shot--burg"><span class="sku">IG-01</span><span class="made">60 made</span><svg viewBox="0 0 120 120" style="color:var(--gold-hi)"><use href="#crest"/></svg></div>
+        <div class="card-body"><div class="card-name">Royal Zip Hoodie</div><div class="card-col">Burgundy Reserve · Sandstone Beige</div>
+        <div class="card-meta"><span>S — 3XL</span><span class="card-price">$118</span></div><button class="notify">Notify me</button></div></article>
+
+      <article class="card"><div class="shot shot--sand"><span class="sku">IG-02</span><span class="made">60 made</span><svg viewBox="0 0 120 120" style="color:#3A2F22"><use href="#crest"/></svg></div>
+        <div class="card-body"><div class="card-name">Royal Jogger</div><div class="card-col">Burgundy Reserve · Sandstone Beige</div>
+        <div class="card-meta"><span>S — 3XL</span><span class="card-price">$88</span></div><button class="notify">Notify me</button></div></article>
+
+      <article class="card"><div class="shot shot--burg"><span class="sku">IG-03</span><span class="made">80 made</span><svg viewBox="0 0 120 120" style="color:var(--gold-hi)"><use href="#crest"/></svg></div>
+        <div class="card-body"><div class="card-name">Royal Short</div><div class="card-col">Burgundy Reserve · Sandstone Beige</div>
+        <div class="card-meta"><span>S — 2XL</span><span class="card-price">$68</span></div><button class="notify">Notify me</button></div></article>
+
+      <article class="card"><div class="shot shot--sand"><span class="sku">IG-04</span><span class="made">50 made</span><svg viewBox="0 0 120 120" style="color:#3A2F22"><use href="#crest"/></svg></div>
+        <div class="card-body"><div class="card-name">Royal Crop Tank</div><div class="card-col">Sandstone Beige</div>
+        <div class="card-meta"><span>XS — XL</span><span class="card-price">$52</span></div><button class="notify">Notify me</button></div></article>
+
+      <article class="card"><div class="shot shot--obs"><span class="sku">IG-05</span><span class="made">120 made</span><svg viewBox="0 0 120 120" style="color:var(--gold)"><use href="#crest"/></svg></div>
+        <div class="card-body"><div class="card-name">Wordmark Tee</div><div class="card-col">Obsidian · Cream · Burgundy</div>
+        <div class="card-meta"><span>S — 3XL</span><span class="card-price">$46</span></div><button class="notify">Notify me</button></div></article>
+
+      <article class="card"><div class="shot shot--cream"><span class="sku">IG-06</span><span class="made">50 made</span><svg viewBox="0 0 120 120" style="color:#3A2F22"><use href="#crest"/></svg></div>
+        <div class="card-body"><div class="card-name">Crest Crop Tee</div><div class="card-col">Cream · Obsidian</div>
+        <div class="card-meta"><span>XS — XL</span><span class="card-price">$48</span></div><button class="notify">Notify me</button></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- COMMAND TEASER -->
+<section class="band band--marble">
+  <div class="wrap teaser">
+    <div class="rv">
+      <span class="eyebrow">Iron Gambit Command</span>
+      <h2>Seven pieces<br>on the board.</h2>
+      <p class="lede" style="margin-top:22px">The brand runs on a crew of AI agents — content, copy, scouting, collabs, launches, analytics, and a guardian that checks all of it. Watch them work.</p>
+      <a href="agents3d.html" class="btn btn--line" style="margin-top:30px">Enter Command</a>
+    </div>
+    <div class="teaser-box rv">
+      <div class="agent-row"><span class="agent-pc">&#9819;</span><span class="agent-nm">Content Engine</span><span class="agent-st"><span class="dot"></span>The Iron House</span></div>
+      <div class="agent-row"><span class="agent-pc">&#9821;</span><span class="agent-nm">Copy Desk</span><span class="agent-st"><span class="dot"></span>The Office</span></div>
+      <div class="agent-row"><span class="agent-pc">&#9822;</span><span class="agent-nm">Houston Scout</span><span class="agent-st"><span class="dot"></span>The Row</span></div>
+      <div class="agent-row"><span class="agent-pc">&#9822;</span><span class="agent-nm">Collab Broker</span><span class="agent-st"><span class="dot"></span>Whiskey River</span></div>
+      <div class="agent-row"><span class="agent-pc">&#9820;</span><span class="agent-nm">Drop Commander</span><span class="agent-st"><span class="dot"></span>The Office</span></div>
+      <div class="agent-row"><span class="agent-pc">&#9820;</span><span class="agent-nm">Post-Mortem</span><span class="agent-st"><span class="dot"></span>The Market</span></div>
+      <div class="agent-row"><span class="agent-pc">&#9818;</span><span class="agent-nm">Brand Guardian</span><span class="agent-st"><span class="dot"></span>Patrolling</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKBOOK -->
+<section class="band band--cream">
+  <div class="wrap">
+    <div class="rv center">
+      <span class="eyebrow">Lookbook · @irongambit</span>
+      <h2>Shot in the<br>Iron House.</h2>
+      <p class="lede center" style="margin:22px auto 0;max-width:46ch">Swap these six for your campaign frames. Keep them square and keep them identical to what you post — the site and the feed should read as one thing.</p>
+    </div>
+    <div class="feed rv">
+      <a class="tile" href="#"><span>I</span></a><a class="tile" href="#"><span>II</span></a><a class="tile" href="#"><span>III</span></a>
+      <a class="tile" href="#"><span>IV</span></a><a class="tile" href="#"><span>V</span></a><a class="tile" href="#"><span>VI</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- HOUSTON -->
+<section class="band band--dark" id="houston">
+  <div class="wrap">
+    <div class="rv center">
+      <span class="eyebrow">Find us in person</span>
+      <h2>Try the weight on.</h2>
+      <p class="lede center" style="margin:22px auto 0;max-width:50ch">Online is the second-best way to buy Iron Gambit. Come feel the fleece, talk to us, walk out with it the same day.</p>
+    </div>
+    <div class="spots rv">
+      <div class="spot"><div class="spot-when">Priority booking</div><h3>HTown Market</h3><p>Large recurring vendor market at POST Houston downtown. Heavy foot traffic and the right crowd for a first table. Apply through POST's vendor form.</p></div>
+      <div class="spot"><div class="spot-when">Twice monthly</div><h3>Pop Up Collective</h3><p>A permanent Houston shop that runs vendor markets and rents individual brand space. The cheapest route to a physical shelf in this city.</p></div>
+      <div class="spot"><div class="spot-when">The real play</div><h3>Gym partnerships</h3><p>A rack in the right Houston gym beats any market. Powerlifting and CrossFit boxes, consignment, no upfront cost. That's where this brand's people already are.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNUP -->
+<section class="band band--burgundy" id="list">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="eyebrow" style="color:var(--gold-hi)">The list</span>
+      <h2>First move<br>goes to you.</h2>
+      <div class="form">
+        <input type="email" id="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email">
+        <button id="join">Join</button>
+      </div>
+      <p class="fineprint" id="msg">One email per drop. Nothing else. Leave whenever you want.</p>
+      <ul class="perks">
+        <li>24-hour early access to every drop</li>
+        <li>First pick of sizes before public release</li>
+        <li>List-only colorways</li>
+        <li>Pop-up locations before we post them</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="band band--dark foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <a href="#top" class="logo"><svg style="color:var(--gold)"><use href="#crest"/></svg><span class="logo-txt">Iron Gambit</span></a>
+      <div class="foot-links">
+        <a href="#">Instagram</a><a href="#">TikTok</a><a href="agents3d.html">Command</a><a href="#">Sizing</a><a href="#">Shipping</a><a href="mailto:hello@irongambit.com">Contact</a>
+      </div>
+    </div>
+    <div class="motto">Give up the piece. Take the board.</div>
+    <div class="foot-legal">© 2026 Iron Gambit · Houston, Texas</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* countdown — EDIT THIS DATE */
+  var TARGET = new Date('2026-09-12T19:00:00-05:00').getTime();
+  function pad(n){ return n < 10 ? '0'+n : ''+n; }
+  function tick(){
+    var gap = Math.max(0, TARGET - Date.now());
+    var s = Math.floor(gap/1000);
+    document.getElementById('d').textContent = pad(Math.floor(s/86400));
+    document.getElementById('h').textContent = pad(Math.floor(s/3600)%24);
+    document.getElementById('m').textContent = pad(Math.floor(s/60)%60);
+    document.getElementById('s').textContent = pad(s%60);
+  }
+  tick(); setInterval(tick,1000);
+
+  /* reveal */
+  if(!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.1, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(function(n){ io.observe(n); });
+  } else {
+    document.querySelectorAll('.rv').forEach(function(n){ n.classList.add('in'); });
+  }
+
+  /* signup — wire to Klaviyo/Shopify here */
+  var msg = document.getElementById('msg'), input = document.getElementById('email');
+  document.getElementById('join').addEventListener('click', function(){
+    var v = input.value.trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){ msg.textContent = 'That address is missing something. Check it and try again.'; return; }
+    /* TODO: POST to your email provider */
+    msg.textContent = "You're on the list. We'll reach you 24 hours before the drop.";
+    input.value = '';
+  });
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') document.getElementById('join').click(); });
+
+  document.querySelectorAll('.notify').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.getElementById('list').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+      setTimeout(function(){ input.focus(); }, reduce ? 0 : 700);
+    });
+  });
+})();
+</script>
+</body>
+</html>
